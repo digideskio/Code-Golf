@@ -1,0 +1,86 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+@import "constants.css.scss";
+
+body {
+  background: white;
+}
+
+#container {
+  width: 710px;
+}
+
+#nav_user {
+  float: right;
+  background-color: $main-green;
+  padding: 0 1.0em;
+  white-space: nowrap;
+  
+  ul { 
+    padding: 0;
+    li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 1.0em;
+    
+      a {
+        padding: 0.5px;
+      }
+    }
+  }
+}
+
+#sidebar {
+ float: right;
+ background-color: $light-green;
+ width: 120px;
+}
+
+#content {
+  width:550px;
+}
+
+.title {
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+.subtext {
+  color: grey;
+}
+
+.round {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.main {
+  background-color: $main-green;
+}
+
+.light {
+  background-color: $light-green;
+}
+
+.right {
+  text-align: right;
+}
+
+.box {
+  margin-top:10px;
+  padding: 10px;
+  margin-bottom:10px;
+}
+
+.button {
+  background-color: $light-green;
+  padding: 5px;
+  display: inline-block;
+}

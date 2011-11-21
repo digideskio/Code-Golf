@@ -1,0 +1,27 @@
+// Place all the styles related to the Problems controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "constants.css.scss";
+
+#introduction {
+  background-color: $main-green;
+}
+
+#old_problem {
+  background-color: $light-green;
+}
+
+#problem_with_description {
+  background-color: $main-green;
+}
+
+#sample_output {
+  background-color: $light-green;
+  overflow-x: scroll;
+}
+
+#submit {
+  border:none;
+  background-color:none;
+}

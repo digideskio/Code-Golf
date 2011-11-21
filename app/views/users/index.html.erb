@@ -1,0 +1,6 @@
+<section id="all_users">
+  <div class="title">Players</div>
+  <% @users.each do |user| %>
+    <%= render :partial => 'user', :object => user %>
+  <% end %>
+</section>

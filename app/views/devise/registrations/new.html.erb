@@ -1,0 +1,18 @@
+<div class="title">Sign up</h2>
+<div id="sign_up" class="round box">
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+  
+    <div><%= f.text_field :name, :placeholder => "name" %></div>
+    <br>
+    <div><%= f.email_field :email, :placeholder => "email" %></div>
+    <br>
+    <div><%= f.password_field :password, :placeholder => "password" %></div>
+    <br>
+    <div><%= f.password_field :password_confirmation, :placeholder => "confirm password" %></div>
+    <br>
+    <% f.hidden_field :score, :value => 0 %>
+    <div><%= f.submit "Sign up" %></div>
+  <% end %>
+</div>
+<%= render :partial => "devise/shared/links" %>

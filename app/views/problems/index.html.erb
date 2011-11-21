@@ -1,0 +1,24 @@
+<div class="container">
+  <%= render :partial => 'layouts/intro'%>
+  <div id="problems">
+    <% if !@current_problems.empty? %>
+      <div class="title">
+        Current Problem
+      </div>
+      <% @current_problems.each do |problem| %>
+        <%= render :partial => 'problem_full', :locals => { :problem => problem } %>
+      <% end %>
+    <% end %>
+    <div class="title">
+      Old Problems
+    </div>
+    <% @old_problems.each do |problem| %>
+      <%= render :partial => 'problem', :locals => { :problem => problem } %>
+    <% end %>
+
+    <br />
+    <% if !current_user.nil? && current_user.admin? %>
+      <div class="round button"><%= link_to 'New Problem', new_problem_path %></div>
+    <% end %>
+  </div>
+</div>

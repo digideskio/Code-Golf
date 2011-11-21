@@ -1,0 +1,14 @@
+<section id="user_profile", class="round box main">
+  <div>Name: <%= @user.name %></div>
+  <div>Score: <%= @user.score %></div>
+  <br>
+  <div class="title">Submissions</div>
+    <% @submissions.each do |submission| %>
+        <div class = "round box light">
+          <%= link_to "#{submission.problem.title}", submission %>
+          <span id="time">       
+            <%= time_ago_in_words(submission.created_at) %> ago
+          </span>
+        </div>
+    <% end %>
+</section>

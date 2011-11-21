@@ -1,0 +1,41 @@
+<section id="problembody">
+  <%= render :partial => 'problem_full', :locals => { :problem => @problem } %>
+  <% if @problem.current_problem? %>
+  <% else %>
+    <div><%= link_to "Make current", problem_path(@problem), :method => :make_current %></div>  
+  <% end %>
+</section>
+
+<div class="title">Sample Output</div>
+<code>
+  <pre id="sample_output" class="box"><%= @problem.sample_output %></pre>
+</code>
+
+<% if @problem.current_problem? %>
+  <div class="title">Submit a solution</div>
+  <problem class="submission newsubmission">
+    <% if user_signed_in? %>
+      <div class="round box light">
+      <%= form_for [@problem, current_user.submissions.new] do |f| %>  
+        <div id="submit"><%= f.text_area :script, :placeholder => "paste your solution in here" %></div>
+        <div><%= f.submit "Submit solution" %></div>
+      <% end %>
+      </div>
+    <% end %>
+  </problem>
+<% end %>
+
+<% if current_user.admin? && @problem.current_problem? %>
+  <dive class="button">
+    <%= link_to "Close Problem", close_problem_path(@problem), :method => :put %>
+  </div>
+<% end %>
+
+<div class="title">Submitted solutions</div>
+  <% @submissions.each do |submission| %>
+    <%= render :partial => 'submissions/submission', :object => submission %>
+  <% end %>
+ </div>
+
+<%= link_to 'Edit', edit_problem_path(@problem) %> |
+<%= link_to 'Back', problems_path %>

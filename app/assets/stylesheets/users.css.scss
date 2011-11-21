@@ -1,0 +1,35 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "constants.css.scss";
+
+#user {
+  margin-top:10px;
+  margin-bottom:10px;
+  background-color: $main-green;
+  width : 300px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#sign_up {
+  display: table;
+  padding: 20px;
+  background-color: $main-green;  
+  input {
+    background-color: $light-green;  
+    border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+    height: 30px;    
+    cursor: default;
+    border: none;
+    width: 300px;
+  }
+}
+/*
+.checkbox {
+  background: $light-green;
+  border: none;
+  height: 10px;
+  width: 300px;
+}*/

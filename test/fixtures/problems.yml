@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: FizzBuzz
+  description: Description of FizzBuzz
+  language: Ruby
+  par_score: 1
+  current_problem: true
+  sample_output: "0\n1\n2\n3\n4\n5\n6\n7\n8\n9"
+
+two:
+  title: CoolProblem
+  description: Description of CoolProblem
+  language: Python
+  par_score: 1
+  current_problem: false
+
+three:
+  title: AnotherProblem
+  description: Description of AnotherProblem
+  language: Python
+  par_score: 1
+  current_problem: false

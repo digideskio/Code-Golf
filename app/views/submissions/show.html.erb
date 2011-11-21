@@ -1,0 +1,10 @@
+<section id="submission">
+  <%= render :partial => 'submission', :object => @submission %>
+  <% if @submission.user.id == current_user.id || current_user.admin? || !@submission.problem.current_problem %>
+    <br>
+    <div class="title">Code</div>
+    <pre>
+      <div id="code_block" class="box"><%= @submission.script %></div>      
+    </pre>  
+  <% end %>
+<section>
