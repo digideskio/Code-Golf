@@ -1,6 +1,5 @@
 <section id="user_profile", class="round box main">
-  <div>Name: <%= @user.name %></div>
-  <div>Score: <%= @user.score %></div>
+  <%= render :partial => 'user', :object => @user%>
   <br>
   <div class="title">Submissions</div>
     <% @submissions.each do |submission| %>

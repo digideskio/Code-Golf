@@ -5,7 +5,12 @@ Golf::Application.routes.draw do
   root :to => 'problems#index'
   
   resources :users
-  resources :submissions  
+  resources :submissions do
+    member do 
+      put 'correct'
+      put 'incorrect'
+    end
+  end  
   
   resources :problems do
     put 'close', :on => :member

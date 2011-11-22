@@ -16,10 +16,7 @@
   <problem class="submission newsubmission">
     <% if user_signed_in? %>
       <div class="round box light">
-      <%= form_for [@problem, current_user.submissions.new] do |f| %>  
-        <div id="submit"><%= f.text_area :script, :placeholder => "paste your solution in here" %></div>
-        <div><%= f.submit "Submit solution" %></div>
-      <% end %>
+        <%= render :partial => 'submissions/form'%>
       </div>
     <% end %>
   </problem>

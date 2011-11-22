@@ -1,4 +1,14 @@
 <div class="round box light">
-  <div><%= link_to submission.problem.title, submission %> </div>
+  <div><%= link_to submission.problem.title, submission %>
+  <span class="subtext">
+  <% if submission.correct.nil? %>
+    (Unverified)
+  <% elsif submission.correct %>
+    (Verified)
+  <% else %>
+    (Incorrect)
+  <% end %>
+  </span>
+  </div>
   <div class="subtext">by <%= submission.user.name %> in <%= submission.script.length %> characters</div>
 </div>

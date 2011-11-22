@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111121001810) do
+ActiveRecord::Schema.define(:version => 20111122005633) do
 
   create_table "problems", :force => true do |t|
     t.string   "title"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20111121001810) do
     t.text     "script",     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "correct"
   end
 
   add_index "submissions", ["user_id", "problem_id"], :name => "index_submissions_on_user_id_and_problem_id"

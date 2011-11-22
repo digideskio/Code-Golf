@@ -7,6 +7,9 @@ class SubmissionsController < ApplicationController
   
   def create
     @problem = Problem.find(params[:problem_id])
+    @problem.submissions.each do |submission|
+      submission.destroy if submission.user.id == current_user.id
+    end
     @submission = @problem.submissions.build(params[:submission])
     @submission.user = current_user
     @submission.script = @submission.script.gsub(/\r\n/, "\n")
@@ -27,6 +30,18 @@ class SubmissionsController < ApplicationController
     @submission.destroy
     
     redirect_to @problem
+  end
+  
+  def correct
+    submission = Submission.find(params[:id])
+    submission.update_attribute(:correct, true)
+    redirect_to submission
+  end
+  
+  def incorrect
+    submission = Submission.find(params[:id])
+    submission.update_attribute(:correct, false)
+    redirect_to submission
   end
 
 end
