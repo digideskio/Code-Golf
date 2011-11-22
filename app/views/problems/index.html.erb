@@ -9,13 +9,14 @@
         <%= render :partial => 'problem_full', :locals => { :problem => problem } %>
       <% end %>
     <% end %>
-    <div class="title">
-      Old Problems
-    </div>
-    <% @old_problems.each do |problem| %>
-      <%= render :partial => 'problem', :locals => { :problem => problem } %>
+    <% if !@old_problems.empty? %>
+      <div class="title">
+        Old Problems
+      </div>
+      <% @old_problems.each do |problem| %>
+        <%= render :partial => 'problem', :locals => { :problem => problem } %>
+      <% end %>
     <% end %>
-
     <br />
     <% if !current_user.nil? && current_user.admin? %>
       <div class="round button"><%= link_to 'New Problem', new_problem_path %></div>

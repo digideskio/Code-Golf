@@ -34,5 +34,6 @@
   <% end %>
  </div>
 
-<%= link_to 'Edit', edit_problem_path(@problem) %> |
-<%= link_to 'Back', problems_path %>
+<% if current_user.admin? %>
+  <%= link_to 'Edit', edit_problem_path(@problem) %>
+<% end %>

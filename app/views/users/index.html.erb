@@ -1,5 +1,7 @@
 <section id="all_users">
-  <div class="title">Players</div>
+  <table id="title" class="title"><tr>
+    <td>Player</td><td class="right">Score</td>
+  </tr></table>
   <% @users.each do |user| %>
     <% if !user.admin? %>
       <%= render :partial => 'user', :object => user %>
