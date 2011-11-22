@@ -18,7 +18,10 @@
 
 #sample_output {
   background-color: $light-green;
+  height: 500px;
+  width: 520px;
   overflow-x: scroll;
+  overflow-y: scroll;
 }
 
 #submit {
