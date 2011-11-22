@@ -1,13 +1,15 @@
 <section id="user_profile", class="round box main">
   <%= render :partial => 'user', :object => @user%>
   <br>
-  <div class="title">Submissions</div>
-    <% @submissions.each do |submission| %>
-        <div class = "round box light">
-          <%= link_to "#{submission.problem.title}", submission %>
-          <span id="time">       
-            <%= time_ago_in_words(submission.created_at) %> ago
-          </span>
-        </div>
+  <% if @submissions.empty? %>
+    <div class="title">Submissions</div>
+      <% @submissions.each do |submission| %>
+          <div class = "round box light">
+            <%= link_to "#{submission.problem.title}", submission %>
+            <span id="time">       
+              <%= time_ago_in_words(submission.created_at) %> ago
+            </span>
+          </div>
+      <% end %>
     <% end %>
 </section>
