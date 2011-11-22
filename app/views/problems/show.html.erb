@@ -22,7 +22,7 @@
   </problem>
 <% end %>
 
-<% if current_user.admin? && @problem.current_problem? %>
+<% if !current_user.nil? && current_user.admin? && @problem.current_problem? %>
   <dive class="button">
     <%= link_to "Close Problem", close_problem_path(@problem), :method => :put %>
   </div>
@@ -34,6 +34,6 @@
   <% end %>
  </div>
 
-<% if current_user.admin? %>
+<% if !current_user.nil? && current_user.admin? %>
   <%= link_to 'Edit', edit_problem_path(@problem) %>
 <% end %>
