@@ -3,8 +3,9 @@
     <!-- <%= logo = image_tag("images/logo.png", :alt => "Code Golf", :class => "round") %> -->
     <% logo = "Middlebury Code Golf"%>    
     <%= link_to logo, root_path %>
-  <nav id="nav_user" class = "round">
+  <nav id="nav_user" class = "round light">
     <ul>
+        <li><%= link_to "Rules", pages_rules_path %>  </li>
       <% if user_signed_in? %>
         <li><%= link_to current_user.name, user_path(current_user) %></li>
         <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>

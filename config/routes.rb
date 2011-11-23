@@ -1,5 +1,7 @@
 Golf::Application.routes.draw do
   
+  get "pages/rules"
+
   devise_for :users
 
   root :to => 'problems#index'
