@@ -1,9 +1,5 @@
 <section id="problembody">
   <%= render :partial => 'problem_full', :locals => { :problem => @problem } %>
-  <% if @problem.current_problem? %>
-  <% else %>
-    <div><%= link_to "Make current", problem_path(@problem), :method => :make_current %></div>  
-  <% end %>
 </section>
 
 <div class="title">Sample Output</div>
