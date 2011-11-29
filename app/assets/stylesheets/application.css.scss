@@ -76,6 +76,9 @@ body {
   margin-top:10px;
   padding: 10px;
   margin-bottom:10px;
+  border-style: solid;
+  border-color: white;
+  border-width:2px;  
 }
 
 .button {
@@ -90,4 +93,8 @@ body {
 
 .underline {
   text-decoration: underline;
+}
+
+.main_border {
+  border-color: $main-green;
 }
