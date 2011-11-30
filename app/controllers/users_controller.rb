@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   
   def index
     @users = User.all
-    @users.sort!{|a,b| a.score <=> b.score}
+    @users.sort!{|a,b| b.score <=> a.score}
   end
   
   def show
