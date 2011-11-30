@@ -3,6 +3,7 @@ class SubmissionsController < ApplicationController
   
   def show
     @submission = Submission.find(params[:id])
+    @current_user_has_submitted = current_user && (current_user.admin? || current_user.has_submitted?(@submission.problem))
   end
   
   def create

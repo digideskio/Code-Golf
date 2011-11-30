@@ -20,6 +20,7 @@ class ProblemsController < ApplicationController
   def show
     @problem = Problem.find(params[:id])
     @submissions = @problem.submissions.all
+    @current_user_has_submitted = current_user && (current_user.admin? || current_user.has_submitted?(@problem))
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @problem }

@@ -10,5 +10,5 @@
   <% end %>
   </span>
   </div>
-  <div class="subtext">by <%= submission.user.name %> in <%= submission.script.length %> characters</div>
+  <div class="subtext">by <%= submission.user.name %> <% if @current_user_has_submitted %>in <%= submission.script.length %> characters <% end %></div>
 </div>
