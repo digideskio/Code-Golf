@@ -88,12 +88,21 @@ class ProblemsController < ApplicationController
   
   def close
     problem = Problem.find(params[:id])
+    score_list = Array.new
+    
     problem.submissions.each do |submission|
-      score = submission.script.length - problem.par_score
+      score_list.push(submission.script.length)
+    end
+    
+    score_list.sort!
+    total = score_list.size
+    
+    problem.submissions.each do |submission|
+      score = total - score_list.index(submission.script.length)
       submission.user.score += score
       submission.user.save
     end
-    problem.toggle!(:current_problem)
+    problem.update_attribute(:current_problem, false)
     redirect_to problem
   end
   
