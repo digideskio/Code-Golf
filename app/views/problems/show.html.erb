@@ -18,7 +18,7 @@
   </problem>
 <% end %>
 
-<% if !current_user.nil? && current_user.admin? && @problem.current_problem? %>
+<% if !current_user.nil? && current_user.admin? %>
   <dive class="button">
     <%= link_to "Close Problem", close_problem_path(@problem), :method => :put %>
   </div>
