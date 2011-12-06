@@ -1,6 +1,5 @@
 <div class="round box link problem_with_description">
   <div class="bold"><%= link_to "#{problem.title} in #{problem.language}", problem %></div>
-  <div class="subtext">Par Score: <%= problem.par_score %></div>
   <div class="subtext">Deadline: <%= problem.deadline.strftime("%A, %B %d at 11:59 pm") %></div>
   <%= problem.description %>
 </div>
