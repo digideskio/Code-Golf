@@ -10,50 +10,51 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111129015611) do
+ActiveRecord::Schema.define(:version => 20111228125623) do
 
   create_table "problems", :force => true do |t|
-    t.string   "title"
-    t.text     "description",     :limit => 255
-    t.integer  "par_score"
-    t.boolean  "current_problem",                :default => true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "language"
-    t.text     "sample_output"
-    t.datetime "deadline"
+    t.string    "title"
+    t.text      "description"
+    t.integer   "par_score"
+    t.boolean   "current_problem", :default => true
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "language"
+    t.text      "sample_output"
+    t.timestamp "deadline"
+    t.string    "comment"
   end
 
   create_table "submissions", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "problem_id"
-    t.text     "script",     :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "correct"
+    t.integer   "user_id"
+    t.integer   "problem_id"
+    t.text      "script",     :null => false
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.boolean   "correct"
   end
 
   add_index "submissions", ["user_id", "problem_id"], :name => "index_submissions_on_user_id_and_problem_id"
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                 :default => "",    :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "",    :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                         :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "name"
-    t.integer  "score",                                 :default => 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "admin",                                 :default => false
+    t.string    "email",                                 :default => "",    :null => false
+    t.string    "encrypted_password",     :limit => 128, :default => "",    :null => false
+    t.string    "reset_password_token"
+    t.timestamp "reset_password_sent_at"
+    t.timestamp "remember_created_at"
+    t.integer   "sign_in_count",                         :default => 0
+    t.timestamp "current_sign_in_at"
+    t.timestamp "last_sign_in_at"
+    t.string    "current_sign_in_ip"
+    t.string    "last_sign_in_ip"
+    t.string    "confirmation_token"
+    t.timestamp "confirmed_at"
+    t.timestamp "confirmation_sent_at"
+    t.string    "name"
+    t.integer   "score",                                 :default => 0
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.boolean   "admin",                                 :default => false
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

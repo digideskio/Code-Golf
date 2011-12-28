@@ -2,6 +2,12 @@
   <%= render :partial => 'problem_full', :locals => { :problem => @problem } %>
 </section>
 
+<% if @problem.comment %>
+  <div class="round box problem_with_description">
+    <%= @problem.comment %>
+  </div>
+<% end %>
+
 <div class="title">Sample Output</div>
 <code>
   <pre id="sample_output" class="box"><%= @problem.sample_output %></pre>
