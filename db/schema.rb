@@ -10,19 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111228125623) do
+ActiveRecord::Schema.define(:version => 20111228133202) do
 
   create_table "problems", :force => true do |t|
-    t.string    "title"
-    t.text      "description"
-    t.integer   "par_score"
-    t.boolean   "current_problem", :default => true
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "language"
-    t.text      "sample_output"
-    t.timestamp "deadline"
-    t.string    "comment"
+    t.string   "title"
+    t.text     "description"
+    t.integer  "par_score"
+    t.boolean  "current_problem",                :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "language"
+    t.text     "sample_output"
+    t.datetime "deadline"
+    t.text     "comment",         :limit => 255
   end
 
   create_table "submissions", :force => true do |t|
