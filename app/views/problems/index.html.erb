@@ -1,25 +1,61 @@
 <div class="container">
   <%= render :partial => 'layouts/intro'%>
+
   <div id="problems">
+
     <% if !@current_problems.empty? %>
-      <div class="title">
-        Current Problem
-      </div>
-      <% @current_problems.each do |problem| %>
-        <%= render :partial => 'problem_full', :locals => { :problem => problem } %>
+      <table class="course_table">
+      <% @current_problems.reverse_each do |problem| %>
+        <% x = rand(3) %>
+        <tr>
+        <% x.times do |i| %>
+          <td></td>
+        <% end %>
+        <td class="golf_flag">
+          <%= image_tag "custom_flag.png", :height => '150' %>
+        </td>
+        </tr>
+        <tr>
+        <% x.times do |i| %>
+          <td></td>
+        <% end %>
+        <td>
+          <%= render :partial => 'problem', :locals => { :problem => problem } %>
+        </td>
+        </tr>
+        <tr></tr>
       <% end %>
+      </table>
     <% end %>
+    
     <% if !@old_problems.empty? %>
-      <div class="title">
-        Old Problems
-      </div>
-      <% @old_problems.each do |problem| %>
-        <%= render :partial => 'problem', :locals => { :problem => problem } %>
+      <table class="course_table">
+      <% @old_problems.reverse_each do |problem| %>
+        <% x = rand(3) %>
+        <tr>
+        <% x.times do |i| %>
+          <td></td>
+        <% end %>
+        <td class="golf_flag">
+          <%= image_tag "custom_flag.png", :height => '150' %>
+        </td>
+        </tr>
+        <tr>
+        <% x.times do |i| %>
+          <td></td>
+        <% end %>
+        <td class="prob">
+          <%= render :partial => 'problem', :locals => { :problem => problem } %>
+        </td>
+        </tr>
+        <tr></tr>
       <% end %>
+      </table>
     <% end %>
-    <br />
+    
     <% if !current_user.nil? && current_user.admin? %>
       <div class="round button"><%= link_to 'New Problem', new_problem_path %></div>
     <% end %>
+
   </div>
 </div>

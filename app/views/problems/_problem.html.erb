@@ -1,5 +1,12 @@
-<div class="round box link old_problem">
-  <div><%= link_to problem.title, problem %> in <%= problem.language %></div>
-  <!-- <td><%= link_to 'Edit', edit_problem_path(problem) %></td>
-  <td><%= link_to 'Destroy', problem, :confirm => 'Are you sure?', :method => :delete %></td> -->
+<div class="round old_problem">
+  <div class="click_title"><%= problem.title %> in <%= problem.language %></div>
+  <div class="description">
+    <%= problem.description %>
+    <br>
+    <% if problem.current_problem %>
+      <%= link_to "See problem", problem %>
+    <% else %>
+      <%= link_to "See solutions", problem %>
+    <% end %>
+  </div>
 </div>

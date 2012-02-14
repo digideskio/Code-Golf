@@ -13,7 +13,7 @@ body {
 }
 
 #container {
-  width: 710px;
+  width: 1000px;
 }
 
 #nav_user {
@@ -37,12 +37,21 @@ body {
 
 #sidebar {
  float: right;
- background-color: $light-green;
+ height: 90px;
  width: 120px;
+ background-image: url("/assets/bunker_sidebar.png");
+ background-repeat: no-repeat;
+ text-align: center;
+      padding: 60px 25px;
+ td {
+    padding: 10px;
+     vertical-align: middle;
+ }
 }
 
 #content {
   width:550px;
+  background: white;  
 }
 
 .title {

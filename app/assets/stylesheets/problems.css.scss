@@ -9,11 +9,49 @@
 }
 
 .old_problem {
-  background-color: $light-green;
+  padding: 10px;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: black;
+  background-color: #E8BF42;
 }
 
 .problem_with_description {
-  background-color: $main-green;
+/*  background-color: $main-green;*/
+}
+
+.course_table {
+  table-layout:fixed;
+  width: 1000px;
+/*  text-align: center;*/
+/*  text-align: justify;*/
+  td.golf_flag {
+    padding: 0px 70px;
+  }
+  
+  tr {
+    height:80px;
+  }
+}
+
+.click_title {
+  &:hover {
+    cursor: pointer;
+    color: grey;
+  }
+}
+
+#introduction {
+  height: 221px;
+  width:500px;
+  background-image: url("/assets/bunker_intro.png");
+  background-repeat: no-repeat;
+  text-align: center;
+  td {
+      padding: 0px 25px;
+      vertical-align: middle;
+      width: 440px;
+  }
 }
 
 #sample_output {
